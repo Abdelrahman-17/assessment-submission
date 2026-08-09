@@ -1,0 +1,20 @@
+sysname R2
+interface LoopBack0
+ description Router-ID / management loopback
+ ip address 10.0.0.2 255.255.255.255
+interface GigabitEthernet0/0/0
+ description Link to R1 Gi0/0
+ ip address 192.168.1.2 255.255.255.0
+interface GigabitEthernet0/0/1
+ description Link to R3 ge-0/0/0
+ ip address 172.16.1.1 255.255.255.0
+ospf 10
+ router-id 10.0.0.2
+ area 0
+  network 10.0.0.2 0.0.0.0
+  network 192.168.1.0 0.0.0.255
+  network 172.16.1.0 0.0.0.255
+acl number 2000
+ rule 5 permit source 10.10.1.0 0.0.0.255
+ rule 10 deny source any
+return

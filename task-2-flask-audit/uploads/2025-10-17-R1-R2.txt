@@ -1,0 +1,29 @@
+2025-10-17 08:00:00 R1 INFO Interface GigabitEthernet0/1 changed state to up
+2025-10-17 08:00:03 R1 INFO Interface GigabitEthernet0/1 line protocol is up
+2025-10-17 08:04:10 R1 WARNING Interface GigabitEthernet0/1 input errors detected
+2025-10-17 08:04:30 R1 INFO Interface GigabitEthernet0/1 changed state to down
+2025-10-17 08:05:12 R1 INFO Interface GigabitEthernet0/1 changed state to up
+2025-10-17 08:05:20 R1 INFO Interface GigabitEthernet0/1 line protocol is up
+2025-10-17 08:11:30 R1 INFO Interface GigabitEthernet0/1 changed state to down
+2025-10-17 08:12:08 R1 INFO Interface GigabitEthernet0/1 changed state to up
+2025-10-17 08:17:40 R1 INFO Interface GigabitEthernet0/1 changed state to down
+2025-10-17 08:18:15 R1 INFO Interface GigabitEthernet0/1 changed state to up
+2025-10-17 08:21:11 R1 INFO BGP neighbor 10.10.10.2 established
+2025-10-17 08:22:25 R1 INFO BGP neighbor 10.10.10.2 went down
+2025-10-17 08:25:00 R1 INFO BGP neighbor 10.10.10.2 established
+2025-10-17 08:26:20 R1 INFO BGP neighbor 10.10.10.2 went down
+2025-10-17 08:38:21 R1 INFO CPU utilization exceeded 90%
+2025-10-17 08:38:59 R1 INFO CPU utilization returned to normal
+2025-10-17 08:42:00 R1 INFO CPU utilization exceeded 85%
+2025-10-17 08:42:40 R1 INFO CPU utilization returned to normal
+2025-10-17 08:50:10 R1 INFO CPU utilization exceeded 92%
+2025-10-17 08:50:55 R1 INFO CPU utilization returned to normal
+2025-10-17 08:46:03 R1 ERROR SNMP authentication failure from 10.0.2.55
+2025-10-17 08:46:33 R1 ERROR SNMP authentication failure from 10.0.2.55
+2025-10-17 08:47:03 R1 ERROR SNMP authentication failure from 10.0.2.55
+2025-10-17 09:00:00 R2 INFO Interface GigabitEthernet0/2 changed state to up
+2025-10-17 09:00:03 R2 INFO Interface GigabitEthernet0/2 line protocol is up
+2025-10-17 09:05:00 R2 INFO CPU utilization exceeded 81%
+2025-10-17 09:05:45 R2 INFO CPU utilization returned to normal
+2025-10-17 09:20:00 R2 INFO BGP neighbor 172.16.0.2 established
+2025-10-17 09:22:10 R2 INFO BGP neighbor 172.16.0.2 went down

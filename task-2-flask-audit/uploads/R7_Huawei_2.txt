@@ -1,0 +1,17 @@
+sysname R7
+interface LoopBack0
+ description Duplicate router-id / loopback IP problem
+ ip address 10.0.0.4 255.255.255.255
+interface GigabitEthernet0/0/0
+ description Link to R5 but uses overlapping R4-R5 subnet
+ ip address 192.168.100.77 255.255.255.0
+interface GigabitEthernet0/0/1
+ description New services LAN
+ ip address 10.10.7.1 255.255.255.0
+bgp 65001
+ router-id 10.0.0.4
+ peer 10.0.0.5 as-number 65000
+ peer 10.0.0.8 as-number 65000
+acl number 3007
+ rule 5 permit ip source any destination any
+return

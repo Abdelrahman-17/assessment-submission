@@ -1,0 +1,20 @@
+ID,Device Name,Rule Checked,Status,Details
+20,R1,Loopback0 Status,PASS,Loopback0 interface is properly configured.
+21,R2,Loopback0 Status,PASS,Loopback0 interface is properly configured.
+22,R3,Loopback0 Status,PASS,Loopback0 interface is properly configured.
+23,R4,Loopback0 Status,PASS,Loopback0 interface is properly configured.
+24,R5,Loopback0 Status,PASS,Loopback0 interface is properly configured.
+25,R6,Loopback0 Status,FAIL,CRITICAL: Missing Loopback0 interface!
+26,R7,Loopback0 Status,PASS,Loopback0 interface is properly configured.
+27,R7,Duplicate Loopback IP,FAIL,Duplicate Loopback IP 10.0.0.4 conflicts with R4
+28,R1,Subnet Overlap,FAIL,Subnet overlap detected with R2 (GigabitEthernet0/0/0: 192.168.1.2)
+29,R1,Subnet Overlap,FAIL,Subnet overlap detected with R6 (GigabitEthernet0/1: 10.10.1.50)
+30,R2,Subnet Overlap,FAIL,Subnet overlap detected with R3 (ge-0/0/0: 172.16.1.2)
+31,R2,Subnet Overlap,FAIL,Subnet overlap detected with R6 (GigabitEthernet0/0: 172.16.1.50)
+32,R3,Subnet Overlap,FAIL,Subnet overlap detected with R6 (GigabitEthernet0/0: 172.16.1.50)
+33,R3,Subnet Overlap,FAIL,Subnet overlap detected with R4 (GigabitEthernet0/0: 172.16.2.2)
+34,R4,Subnet Overlap,FAIL,Subnet overlap detected with R7 (LoopBack0: 10.0.0.4)
+35,R4,Subnet Overlap,FAIL,Subnet overlap detected with R5 (GigabitEthernet0/0/0: 192.168.100.2)
+36,R4,Subnet Overlap,FAIL,Subnet overlap detected with R7 (GigabitEthernet0/0/0: 192.168.100.77)
+37,R5,Subnet Overlap,FAIL,Subnet overlap detected with R7 (GigabitEthernet0/0/0: 192.168.100.77)
+38,R7,BGP AS Consistency,FAIL,BGP AS Mismatch: Uses AS 65001 instead of main AS 65000
