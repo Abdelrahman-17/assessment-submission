@@ -1,0 +1,14 @@
+timestamp,device,severity,message,category,interface,interface_state,bgp_neighbor,bgp_state,src_ip,numeric_val,thermal_sensor,thermal_state,source_file,line_number
+2025-10-17 08:00:00,R1,INFO,Interface GigabitEthernet0/1 changed state to up,Interface,GigabitEthernet0/1,UP,,,,,,,2025-10-17-R1-R2.log,1
+2025-10-17 08:04:30,R1,INFO,Interface GigabitEthernet0/1 changed state to down,Interface,GigabitEthernet0/1,DOWN,,,,,,,2025-10-17-R1-R2.log,4
+2025-10-17 08:05:12,R1,INFO,Interface GigabitEthernet0/1 changed state to up,Interface,GigabitEthernet0/1,UP,,,,,,,2025-10-17-R1-R2.log,5
+2025-10-17 08:11:30,R1,INFO,Interface GigabitEthernet0/1 changed state to down,Interface,GigabitEthernet0/1,DOWN,,,,,,,2025-10-17-R1-R2.log,7
+2025-10-17 08:12:08,R1,INFO,Interface GigabitEthernet0/1 changed state to up,Interface,GigabitEthernet0/1,UP,,,,,,,2025-10-17-R1-R2.log,8
+2025-10-17 08:17:40,R1,INFO,Interface GigabitEthernet0/1 changed state to down,Interface,GigabitEthernet0/1,DOWN,,,,,,,2025-10-17-R1-R2.log,9
+2025-10-17 08:18:15,R1,INFO,Interface GigabitEthernet0/1 changed state to up,Interface,GigabitEthernet0/1,UP,,,,,,,2025-10-17-R1-R2.log,10
+2025-10-19 06:45:10,R1,INFO,Interface GigabitEthernet0/1 changed state to up,Interface,GigabitEthernet0/1,UP,,,,,,,2025-10-19-mixed.log,1
+2025-10-19 06:53:42,R1,INFO,Interface GigabitEthernet0/1 changed state to down,Interface,GigabitEthernet0/1,DOWN,,,,,,,2025-10-19-mixed.log,3
+2025-10-19 06:54:06,R1,INFO,Interface GigabitEthernet0/1 changed state to up,Interface,GigabitEthernet0/1,UP,,,,,,,2025-10-19-mixed.log,4
+2025-10-20 09:10:15,R1,INFO,Interface GigabitEthernet0/1 changed state to up,Interface,GigabitEthernet0/1,UP,,,,,,,2025-10-20-critical.log,1
+2025-10-20 09:24:34,R1,INFO,Interface GigabitEthernet0/1 changed state to down,Interface,GigabitEthernet0/1,DOWN,,,,,,,2025-10-20-critical.log,2
+2025-10-20 09:25:05,R1,INFO,Interface GigabitEthernet0/1 changed state to up,Interface,GigabitEthernet0/1,UP,,,,,,,2025-10-20-critical.log,3

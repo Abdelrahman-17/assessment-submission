@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Prompt Web App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+    .container { width: min(900px, 92%); margin: 50px auto; background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 5px 22px rgba(0,0,0,.08); }
+    h1 { margin-top: 0; }
+    label { display: block; margin-top: 18px; font-weight: 600; }
+    textarea, select { width: 100%; box-sizing: border-box; padding: 12px; margin-top: 8px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; }
+    textarea { resize: vertical; }
+    button, .btn { display: inline-block; border: 0; border-radius: 8px; padding: 11px 18px; margin-top: 16px; background: #2563eb; color: #fff; text-decoration: none; cursor: pointer; }
+    .btn.secondary { background: #475569; }
+    .error { margin-top: 18px; padding: 12px; background: #fee2e2; color: #991b1b; border-radius: 8px; }
+    .response { margin-top: 24px; padding: 18px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 8px; white-space: pre-wrap; }
+    .meta { margin-top: 8px; color: #64748b; font-size: 14px; }
+    .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .counter { margin-top: 25px; padding-top: 18px; border-top: 1px solid #e2e8f0; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="nav">
+    <a class="btn secondary" href="/history">Prompt History</a>
+    <a class="btn secondary" href="/export">Export CSV</a>
+  </div>
+  <h1>AI Prompt Web App</h1>
+  <p>Configurable AI provider with deterministic local Mock Mode.</p>
+
+  {% if error %}<div class="error">{{ error }}</div>{% endif %}
+
+  <form method="post" action="/">
+    <label for="template">Prompt Template</label>
+    <select id="template" name="template">
+      {% for name in templates %}
+      <option value="{{ name }}" {% if name == selected_template %}selected{% endif %}>{{ name }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="prompt">Prompt</label>
+    <textarea id="prompt" name="prompt" rows="8" maxlength="1000" placeholder="Enter your prompt..." required>{{ request.form.get('prompt', '') }}</textarea>
+    <button type="submit">Submit Prompt</button>
+  </form>
+
+  {% if response %}
+  <div class="response"><strong>AI Response ({{ mode }} Mode)</strong><div class="meta">The response was stored in local SQLite history.</div><p>{{ response }}</p></div>
+  {% endif %}
+
+  {% if counters %}
+  <div class="counter">
+    <strong>Successful usage by template</strong>
+    <ul>{% for template, count in counters %}<li>{{ template }}: {{ count }}</li>{% endfor %}</ul>
+  </div>
+  {% endif %}
+</div>
+</body>
+</html>

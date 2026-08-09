@@ -1,0 +1,8 @@
+device,event,event_detail,count,first_seen,last_seen,risk_level,recommendation
+R1,BGP Instability,Neighbor 10.10.10.2 transitioned Established -> Down 2 time(s) within 10 minutes,2,2025-10-17 08:21:11,2025-10-17 08:26:20,High,"Check WAN/link stability, BGP timers, packet loss, and peer health for neighbor 10.10.10.2."
+R1,High CPU Utilization,3 CPU spikes above 80% within one hour,3,2025-10-17 08:38:21,2025-10-17 08:50:10,High,"Review CPU-consuming processes, traffic load, control-plane activity, and capacity."
+R1,Repeated SNMP Auth Failures,3 authentication failures from 10.0.2.55,3,2025-10-17 08:46:03,2025-10-17 08:47:03,High,Verify NMS credentials/community configuration and restrict untrusted source 10.0.2.55 with ACL/security controls.
+R1,BGP Instability,Neighbor 192.168.1.2 transitioned Established -> Down 1 time(s) within 10 minutes,1,2025-10-19 07:00:02,2025-10-19 07:00:49,High,"Check WAN/link stability, BGP timers, packet loss, and peer health for neighbor 192.168.1.2."
+R1,Repeated SNMP Auth Failures,3 authentication failures from 10.0.3.55,3,2025-10-19 07:41:09,2025-10-19 07:42:09,High,Verify NMS credentials/community configuration and restrict untrusted source 10.0.3.55 with ACL/security controls.
+R1,BGP Instability,Neighbor 172.16.200.2 transitioned Established -> Down 1 time(s) within 10 minutes,1,2025-10-20 09:40:59,2025-10-20 09:41:47,High,"Check WAN/link stability, BGP timers, packet loss, and peer health for neighbor 172.16.200.2."
+R1,Interface Flapping,GigabitEthernet0/1 had 3 DOWN->UP flaps within one hour,3,2025-10-17 08:04:30,2025-10-17 08:18:15,Medium,"Check physical connectivity, optics/SFPs, errors, and interface stability on GigabitEthernet0/1."

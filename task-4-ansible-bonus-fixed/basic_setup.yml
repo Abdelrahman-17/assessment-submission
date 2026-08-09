@@ -1,0 +1,58 @@
+---
+- name: Task 4 - Ansible Basics Lab
+  hosts: webservers
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Display hostname, OS family, IP address and uptime
+      ansible.builtin.debug:
+        msg:
+          - "Hostname: {{ ansible_hostname }}"
+          - "OS Family: {{ ansible_os_family }}"
+          - "IP Address: {{ ansible_default_ipv4.address | default(ansible_all_ipv4_addresses | first | default('N/A')) }}"
+          - "Uptime: {{ (ansible_uptime_seconds | int // 3600) }}h {{ ((ansible_uptime_seconds | int % 3600) // 60) }}m"
+
+    - name: Create Ansible lab directory
+      ansible.builtin.file:
+        path: /tmp/ansible_lab
+        state: directory
+        mode: '0755'
+
+    - name: Copy lab message file
+      ansible.builtin.copy:
+        content: |
+          Welcome to the Ansible Lab - Managed by Automation!
+          This file was deployed by basic_setup.yml.
+        dest: /tmp/ansible_lab/motd.txt
+        mode: '0644'
+
+    - name: Install curl package
+      ansible.builtin.package:
+        name: curl
+        state: present
+
+    - name: Gather service facts
+      ansible.builtin.service_facts:
+
+    - name: Determine SSH service name
+      ansible.builtin.set_fact:
+        ssh_service_name: >-
+          {{ 'ssh.service' if 'ssh.service' in ansible_facts.services
+             else ('sshd.service' if 'sshd.service' in ansible_facts.services else '') }}
+
+    - name: Display SSH service status
+      ansible.builtin.debug:
+        msg: >-
+          SSH service: {{ ssh_service_name if ssh_service_name else 'not detected' }};
+          status: {{ ansible_facts.services[ssh_service_name].state
+                     if ssh_service_name else 'unknown' }}
+
+    - name: Verify lab directory exists
+      ansible.builtin.stat:
+        path: /tmp/ansible_lab/motd.txt
+      register: lab_file
+
+    - name: Confirm deployed file
+      ansible.builtin.debug:
+        msg: "Lab file exists: {{ lab_file.stat.exists }}"

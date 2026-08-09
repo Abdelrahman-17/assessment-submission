@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt History</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+    .container { width: min(1200px, 94%); margin: 35px auto; background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 5px 22px rgba(0,0,0,.08); overflow-x: auto; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+    .btn { display: inline-block; padding: 10px 15px; border-radius: 8px; background: #2563eb; color: white; text-decoration: none; }
+    form { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+    input { padding: 10px; min-width: 280px; border: 1px solid #cbd5e1; border-radius: 8px; }
+    button { padding: 10px 15px; border: 0; border-radius: 8px; background: #475569; color: white; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; min-width: 900px; }
+    th, td { border-bottom: 1px solid #e2e8f0; padding: 10px; text-align: left; vertical-align: top; font-size: 14px; }
+    th { background: #f8fafc; }
+    .success { color: #166534; font-weight: 600; }
+    .error { color: #991b1b; font-weight: 600; }
+    .wrap { white-space: pre-wrap; max-width: 420px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="actions"><a class="btn" href="/">Back to App</a><a class="btn" href="/export">Export CSV</a></div>
+  <h1>Prompt History</h1>
+  <form method="get" action="/history">
+    <input name="search" value="{{ search }}" placeholder="Search prompt, response, or template">
+    <button type="submit">Search</button>
+  </form>
+  <table>
+    <thead><tr><th>ID</th><th>Timestamp</th><th>Template</th><th>Mode</th><th>Prompt</th><th>Response</th><th>Status</th></tr></thead>
+    <tbody>
+    {% for row in history %}
+      <tr>
+        <td>{{ row[0] }}</td><td>{{ row[1] }}</td><td>{{ row[3] }}</td><td>{{ row[4] }}</td>
+        <td class="wrap">{{ row[2] }}</td><td class="wrap">{{ row[5] }}</td>
+        <td class="{% if row[6] == 'Success' %}success{% else %}error{% endif %}">{{ row[6] }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="7">No history found.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

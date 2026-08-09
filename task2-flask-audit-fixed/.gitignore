@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.py[cod]
+*.db
+.venv/
+venv/
+internal_data/uploads/*
+internal_data/exports/*
+!internal_data/uploads/.gitkeep
+!internal_data/exports/.gitkeep
