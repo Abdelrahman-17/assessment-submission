@@ -67,3 +67,6 @@ python3 analyzer.py --date 2025-10-18
 ---
 
 ## 📊 Visualizations (Bonus)
+![Top Devices by Event Count](devices_event_count.png)
+
+![Risk Level Distribution](risk_level_distribution.png)
