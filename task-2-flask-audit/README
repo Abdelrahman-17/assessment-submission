@@ -20,39 +20,38 @@ Build a lightweight web platform that ingests network configuration files and lo
 ```text
 task-2-flask-audit/
 ├── app.py                 # Main Flask application & routes
-├── models.py              # SQLite database models & setup
 ├── requirements.txt       # Project dependencies
-├── .env                   # Configuration & credentials (ignored in git)
+├── static/                # Static assets (CSS, JS)
 ├── templates/             # HTML templates
 │   ├── base.html          # Base layout template
 │   ├── dashboard.html     # Main dashboard with charts & tables
 │   ├── upload.html        # File ingestion interface
 │   ├── device.html        # Device drill-down view
 │   └── login.html         # Admin login page [Bonus]
-└── README                 # Project documentation
-⚙️ Setup & Running Instructions
-Clone the repository:
+├── lib/                   # Core business logic & parser modules
+├── internal_data/         # Internal datasets, uploads & exports
+└── README.md              # Project documentation
+```
 
-Bash
-git clone <your-repository-url>
-Navigate to the project folder:
+## ⚙️ Setup & Running Instructions
 
-Bash
-cd task-2-flask-audit
-Install dependencies:
+### Install dependencies:
 
-Bash
+```bash
 pip install -r requirements.txt
+```
+
 Configure Environment Variables (.env):
 
-Bash
 echo "SECRET_KEY=supersecretkey" >> .env
 echo "ADMIN_USERNAME=admin" >> .env
 echo "ADMIN_PASSWORD=admin" >> .env
 Run the Application:
 
-Bash
+```bash
 python3 app.py
+```
+
 Access Platform:
 Open your browser and navigate to http://localhost:5000
 
