@@ -5,17 +5,16 @@ A Python tool that converts raw network syslog files into structured analytics, 
 
 ---
 
-## 📁 Repository Structure
 ```text
 task-1-log-analyzer/
-├── analyzer.py                 # Main Python script for parsing, risk engine, DB pipeline & charts
-├── README.md                   # Project documentation and instructions
-├── logs/                       # Raw syslog files from network routers (R1-R4)
-├── network_events.db           # SQLite database storing normalized events & risks
-├── events.csv                  # Exported parsed events dataset
-├── risk_report.csv             # Exported summary of detected operational risks
-├── devices_event_count.png     # Matplotlib bar chart (Top devices by event count)
-└── risk_level_distribution.png # Matplotlib bar chart (Risk level distribution)
+├── analyzer.py            # Main processing & parsing script
+├── requirements.txt       # Project dependencies
+├── README.md              # Project documentation
+├── logs/                  # Raw input log files directory
+├── output/                # Generated reports folder
+│   ├── events.csv         # Extracted and structured security events
+│   └── risk_report.csv    # Aggregated risk analysis report
+└── network_events.db      # Local SQLite database (auto-generated)
 ```
 
 ---
