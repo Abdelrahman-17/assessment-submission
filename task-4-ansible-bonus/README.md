@@ -12,10 +12,9 @@ A complete Ansible lab demonstrating core automation workflows, including custom
    cd task-4-ansible-bonus
 Test SSH/Local Connectivity (Ping Test):
 
-Bash
-ansible all -i inventory.ini -m ping
-Run the Playbook (Idempotency Check):
-Run the playbook twice to demonstrate that the second execution results in changed=0 (Idempotency):
+   ```Bash
+   ansible all -i inventory.ini -m ping
 
-Bash
-ansible-playbook -i inventory.ini basic_setup.yml
+
+   ```Bash
+   ansible-playbook -i inventory.ini basic_setup.yml
