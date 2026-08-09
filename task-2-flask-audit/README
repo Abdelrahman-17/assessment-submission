@@ -3,7 +3,7 @@
 ## 🎯 Objective & Overview
 Build a lightweight web platform that ingests network configuration files and log files, validates key network design rules, and presents the findings in a useful dashboard.
 
----
+
 
 ## 🛠️ Tech Stack & Skills
 
@@ -32,6 +32,8 @@ task-2-flask-audit/
 ├── internal_data/         # Internal datasets, uploads & exports
 └── README.md              # Project documentation
 ```
+
+---
 
 ## ⚙️ Setup & Running Instructions
 
