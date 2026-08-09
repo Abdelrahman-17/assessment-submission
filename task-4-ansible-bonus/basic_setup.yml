@@ -1,0 +1,39 @@
+---
+- name: Task 4 - Ansible Basics Lab Setup
+  hosts: all
+  become: yes
+  tasks:
+    - name: 1. Gather and display system info (Hostname, OS, IP, Uptime)
+      debug:
+        msg: >
+          Host: {{ ansible_hostname }} | 
+          OS Family: {{ ansible_os_family }} | 
+          IP: {{ ansible_default_ipv4.address | default('N/A') }}
+
+    - name: 2. Create the lab directory under /tmp
+      file:
+        path: /tmp/ansible_lab
+        state: directory
+        mode: '0755'
+
+    - name: 3. Copy a custom MOTD / text file to the VMs
+      copy:
+        content: "Welcome to the Ansible Lab - Managed by Automation!\n"
+        dest: /tmp/ansible_lab/motd.txt
+        mode: '0644'
+
+    - name: 4. Install a simple utility package (curl)
+      apt:
+        name: curl
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: 5. Check SSH service status
+      service:
+        name: "{{ 'ssh' if ansible_os_family == 'Debian' else 'sshd' }}"
+        state: started
+      register: ssh_status
+
+    - name: 6. Display service check confirmation
+      debug:
+        msg: "Service SSH is active and running successfully."
